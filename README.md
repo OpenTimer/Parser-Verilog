@@ -35,7 +35,7 @@ wire w2;
 wire w3;
 wire w4;
 
-// Gate instances
+// module instances
 AND2_X1 g1 (.a(input1), .b(input2), .o(w1));
 OR2_X1 g2  (.a(input3), .b(w1), .o(w2));
 INV_X2 g3  (.a(w2), .o(w3));
@@ -77,7 +77,7 @@ struct MyVerilogParser : public verilog::ParserVerilogInterface {
     std::cout << "Assignment: " << ast << '\n';
   }  
 
-  // Function that will be called when encountering a gate instance.
+  // Function that will be called when encountering a module instance.
   void add_instance(verilog::Instance&& inst) {
     std::cout << "Instance: " << inst << '\n';
   }
@@ -147,7 +147,7 @@ struct MyVerilogParser : public verilog::ParserVerilogInterface {
     // Process an assignment
   }  
   void add_instance(verilog::Instance&& inst) {
-    // Process a gate instance
+    // Process a module instance
   }
 };
 ```
@@ -159,7 +159,7 @@ Below are the required member functions in your custom Verilog parser
 | add_port    | Port  | n/a |  invoked when encountering a primary input/output of the module |
 | add_net     | Net  | n/a | invoked when encountering a net declaration |
 | add_assignment | Assignment | n/a | invoked when encountering an assignment statement |
-| add_instance | Instance | n/a | invoked when encountering a gate instance|
+| add_instance | Instance | n/a | invoked when encountering a module instance|
 
 ## Data Structures
 We define a set of `structs` storing the information of different components during parsing and 
@@ -197,14 +197,14 @@ The struct `Assignment` stores the information of an assignment statement
 
 
 ### Struct Instance
-The struct `Instance` stores the information of a gate instance
+The struct `Instance` stores the information of a module instance
 
 | Name | Type | Description |
 | ------------- |:-------------| :--------------| 
-| module_name   | std::string | the name of the gate  |
+| module_name   | std::string | the name of the module  |
 | inst_name     | std::string | the name of the instance  |
-| pin_names   | std::vector<std::variant<std::string, NetBit, NetRange>> | the left hand side of the assignment statement |
-| net_names   | std::vector<std::vector<std::variant<std::string, NetBit, NetRange, Constant>>> | the right hand side of the assignment statement  |
+| pin_names   | std::vector<std::variant<std::string, NetBit, NetRange>> | the input/output pins of the instance |
+| net_names   | std::vector<std::vector<std::variant<std::string, NetBit, NetRange, Constant>>> | the nets connecting to the pins |
 
 
 

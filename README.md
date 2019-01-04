@@ -186,7 +186,6 @@ The struct `Net` stores the information of a net declaration
 | beg, end   | `int` | the bitwidth (range) of the net   |
 
 
-
 ### Struct Assignment
 The struct `Assignment` stores the information of an assignment statement
 
@@ -206,6 +205,11 @@ The struct `Instance` stores the information of a module instance
 | pin_names   | std::vector<std::variant<std::string, NetBit, NetRange>> | the input/output pins of the instance |
 | net_names   | std::vector<std::vector<std::variant<std::string, NetBit, NetRange, Constant>>> | the nets connecting to the pins |
 
+
+
+
+# Examples 
+The folder [example](./example) contains several tutorial examples to demonstrate the usage of Parser-Verilog.
 
 
 

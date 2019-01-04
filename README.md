@@ -83,13 +83,22 @@ struct MyVerilogParser : public verilog::ParserVerilogInterface {
   }
 };
 
-int main(const int argc, const char **argv){
+int main(){
   MyVerilogParser parser;
   parser.read("verilog_file.v");
   return EXIT_SUCCESS;
 }
 ```
 
+You need a C++ compiler with C++17 support, [GNU Bison] and [Flex] to compile Parser-Verilog.
+```bash
+flex -o./verilog_lexer.yy.cc parser-verilog/verilog_lexer.l 
+bison -d -o verilog_parser.tab.cc parser-verilog/verilog_parser.yy
+g++ -std=c++17 -I parser-verilog/ verilog_parser.tab.cc verilog_lexer.yy.cc example/simple_parser.cpp -o simple_parser -lstdc++fs
+```
 
 ***
-[Verilog]:            https://en.wikipedia.org/wiki/Verilog
+[Verilog]:            https://en.wikipedia.org/wiki/Verilog 
+[GNU Bison]           https://www.gnu.org/software/bison/
+[Flex]                https://github.com/westes/flex 
+

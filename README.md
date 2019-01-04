@@ -9,10 +9,10 @@ digital circuit. Below is a circuit written in Verilog.
 
 ```Verilog 
 module simple (
-input1,
-input2, 
-input3,
-out
+  input1,
+  input2, 
+  input3,
+  out
 );
 
 // Primary inputs

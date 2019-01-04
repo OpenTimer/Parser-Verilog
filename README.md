@@ -15,10 +15,6 @@ module simple (input1, input2, input3, out);
 // primary inputs
 input input1, input2, input3;
 
-wire input1;
-wire input2;
-wire input3;
-
 // primary output
 output out; 
 

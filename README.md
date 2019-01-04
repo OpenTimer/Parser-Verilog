@@ -101,7 +101,7 @@ You need a C++ compiler with C++17 support, [GNU Bison] and [Flex] to compile Pa
 ## System Requirements
 To use Parser-Verilog, you need following libraries:
 + GNU [C++ Compiler G++ v7.2](https://gcc.gnu.org/gcc-7/) (or higher) with C++17 support 
-+ [Bison] at least 3.0.4
++ [GNU Bison] at least 3.0.4
 + [Flex] at least 2.6.0
 
 Currently Parser-SPEF has been tested to run well on Linux distributions.

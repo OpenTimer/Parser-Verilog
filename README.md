@@ -13,9 +13,7 @@ digital circuit. Below is a circuit written in Verilog.
 module simple (input1, input2, input3, out);
 
 // primary inputs
-input input1;
-input input2;
-input input3;
+input input1, input2, input3;
 
 wire input1;
 wire input2;

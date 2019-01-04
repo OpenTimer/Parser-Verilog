@@ -152,6 +152,9 @@ struct MyVerilogParser : public verilog::ParserVerilogInterface {
 };
 ```
 
+## Data Structures
+We define a set of `structs` storing the information of components during parsing and 
+we invoke your parser's member functions on those data structures.
 
 
 # License

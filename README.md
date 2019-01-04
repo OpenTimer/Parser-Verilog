@@ -156,7 +156,7 @@ Below are the required member functions in your custom Verilog parser
 | Name | Argument | Return | Description |
 | ----- |:------------------| :-------------- | :-------------- |
 | add_module  | std::string | n/a | Invoked when encountering the name of top module |
-| add_port    | Port  | n/a |  Invoked when encountering a PI/PO of the module |
+| add_port    | Port  | n/a |  Invoked when encountering a primary input/output of the module |
 | add_net     | Net  | n/a | Invoked when encountering a net declaration |
 | add_assignment | Assignment | n/a | Invoked when encountering an assignment statement |
 | add_instance | Instance | n/a | Invoked when encountering a gate |

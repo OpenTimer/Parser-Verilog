@@ -92,9 +92,9 @@ int main(){
 
 You need a C++ compiler with C++17 support, [GNU Bison] and [Flex] to compile Parser-Verilog.
 ```console
-flex -o./verilog_lexer.yy.cc parser-verilog/verilog_lexer.l 
-bison -d -o verilog_parser.tab.cc parser-verilog/verilog_parser.yy
-g++ -std=c++17 -I parser-verilog/ verilog_parser.tab.cc verilog_lexer.yy.cc example/simple_parser.cpp -o simple_parser -lstdc++fs
+~$ flex -o./verilog_lexer.yy.cc parser-verilog/verilog_lexer.l 
+~$ bison -d -o verilog_parser.tab.cc parser-verilog/verilog_parser.yy
+~$ g++ -std=c++17 -I parser-verilog/ verilog_parser.tab.cc verilog_lexer.yy.cc example/simple_parser.cpp -o simple_parser -lstdc++fs
 ```
 
 ***

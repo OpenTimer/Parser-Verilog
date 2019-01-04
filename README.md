@@ -216,6 +216,23 @@ The struct `Constant` records the possible number formats in Verilog
 | ConstantType  | `enum class` | the format of the number. The value could be NONE, INTEGER, BINARY, OCTAL, DECIMAL, HEX, REAL, EXP | 
 
 
+### Struct NetBit
+The struct `NetBit` specifies a bit in a net
+| Name | Type | Description |
+| ------------- |:-------------| :--------------| 
+| name | std::string |  the name of a net   |
+| bit  | int | the index of the bit |
+
+
+### Struct NetRange
+The struct `NetRange` specifies a range in a net
+| Name | Type | Description |
+| ------------- |:-------------| :--------------| 
+| name | std::string |  the name of a net   |
+| beg, end  | int | the bit range of a net |
+
+
+
 
 # Examples 
 The folder [example](./example) contains several tutorial examples to demonstrate the usage of Parser-Verilog.

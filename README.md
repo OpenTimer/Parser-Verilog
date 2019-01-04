@@ -104,7 +104,7 @@ To use Parser-Verilog, you need following libraries:
 + [GNU Bison] at least 3.0.4
 + [Flex] at least 2.6.0
 
-Currently Parser-SPEF has been tested to run well on Linux distributions.
+Currently Parser-Verilog has been tested to run well on Linux distributions.
 
 ## Build through CMake 
 We use [CMake](https://cmake.org/) to manage the source and tests. 

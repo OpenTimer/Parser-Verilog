@@ -172,8 +172,19 @@ The struct `Port` stores the information of a primary input/output of the module
 | ------------- |:-------------| :--------------|
 | name   | std::vector<std::string> | the names of ports   |
 | PortDirection   | `enum class` | the direction of the port. The value could be either INPUT, OUTPUT or INOUT.   | 
-| beg, end   | `int` | the bitwidth of the port   |
 | ConnectionType | `enum class` | the connection type of the port. The value could be either NONE, WIRE, REG. | 
+| beg, end   | `int` | the bitwidth (range) of the port   |
+
+
+### Struct Net
+The struct `Net` stores the information of a net declaration
+
+| Name | Type | Description |
+| ------------- |:-------------| :--------------|
+| name   | std::vector<std::string> | the names of nets   |
+| NetType   | `enum class` | the type of a net. The value could be either NONE, REG, WIRE, WAND, WOR, TRI, TRIOR, TRIAND, SUPPLY0, SUPPLY1 | 
+| beg, end   | `int` | the bitwidth (range) of the net   |
+
 
 
 # License

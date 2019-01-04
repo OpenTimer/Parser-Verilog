@@ -35,7 +35,6 @@ wire out;
 wire w1;
 wire w2;
 wire w3;
-wire w4;
 
 // module instances
 AND2_X1 g1 (.a(input1), .b(input2), .o(w1));

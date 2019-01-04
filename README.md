@@ -106,7 +106,7 @@ You need a C++ compiler with C++17 support, [GNU Bison] and [Flex] to compile Pa
 
 <img align="right" src="http://opensource.org/trademarks/opensource/OSI-Approved-License-100x137.png">
 
-Parser-SPEF is licensed under the [MIT License](./LICENSE):
+Parser-Verilog is licensed under the [MIT License](./LICENSE):
 
 Copyright &copy; 2019 [Chun-Xun Lin][Chun-Xun Lin], [Tsung-Wei Huang][Tsung-Wei Huang] and [Martin Wong][Martin Wong]
 

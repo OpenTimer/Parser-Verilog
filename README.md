@@ -120,8 +120,10 @@ We recommend using out-of-source build.
 ```
 
 ## Use Parser-Verilog 
-Parser-Verilog is extremely easy to use and understand. You just define your own Verilog parser `struct` or `class` to 
-inherit the `VerilogParserInterface`
+Parser-Verilog is extremely easy to use and understand. You create your own Verilog parser `struct` or `class` that 
+inherits the `VerilogParserInterface` and define member functions to be invoked to process the components in Verilog.
+
+
 
 
 # License

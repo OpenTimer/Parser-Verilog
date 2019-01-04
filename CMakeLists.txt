@@ -38,6 +38,7 @@ ADD_FLEX_BISON_DEPENDENCY(verilog_lexer verilog_parser)
 # Set the output folder to example
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/example)
 
+# A sample parser
 add_executable(sample_parser
   ${PROJECT_SOURCE_DIR}/example/sample_parser.cpp
   ${FLEX_verilog_lexer_OUTPUTS}
@@ -45,8 +46,7 @@ add_executable(sample_parser
 )
 target_link_libraries(sample_parser stdc++fs)
 
-
-
+# A drop-in replacement OpenTimer Verilog parser
 add_executable(ot_parser
   ${PROJECT_SOURCE_DIR}/example/ot_parser.cpp
   ${FLEX_verilog_lexer_OUTPUTS}

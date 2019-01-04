@@ -97,8 +97,29 @@ You need a C++ compiler with C++17 support, [GNU Bison] and [Flex] to compile Pa
 ~$ g++ -std=c++17 -I parser-verilog/ verilog_parser.tab.cc verilog_lexer.yy.cc example/simple_parser.cpp -o simple_parser -lstdc++fs
 ```
 
+# Compile Tests
+## System Requirements
+To use Parser-Verilog, you need following libraries:
++ GNU [C++ Compiler G++ v7.2](https://gcc.gnu.org/gcc-7/) (or higher) with C++17 support 
++ [Bison] at least 3.0.4
++ [Flex] at least 2.6.0
 
-# Use Parser-Verilog 
+Currently Parser-SPEF has been tested to run well on Linux distributions.
+
+## Build through CMake 
+We use [CMake](https://cmake.org/) to manage the source and tests. 
+We recommend using out-of-source build.
+
+```bash
+~$ git clone https://github.com/OpenTimer/Parser-Verilog.git
+~$ cd Parser-Verilog
+~$ mkdir build
+~$ cd build
+~$ cmake ../
+~$ make 
+```
+
+## Use Parser-Verilog 
 
 
 

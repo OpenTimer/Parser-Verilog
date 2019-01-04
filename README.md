@@ -10,12 +10,7 @@ digital circuit. Below is a circuit written in Verilog.
 <img src="image/circuit.png" height="100%" width="40%" align="right"> 
 
 ```Verilog 
-module simple (
-  input1,
-  input2, 
-  input3,
-  out
-);
+module simple (input1, input2, input3, out);
 
 // primary inputs
 input input1;

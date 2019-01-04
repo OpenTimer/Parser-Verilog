@@ -98,7 +98,7 @@ g++ -std=c++17 -I parser-verilog/ verilog_parser.tab.cc verilog_lexer.yy.cc exam
 ```
 
 ***
-[Verilog]:            https://en.wikipedia.org/wiki/Verilog 
-[GNU Bison]           https://www.gnu.org/software/bison/
-[Flex]                https://github.com/westes/flex 
+[Verilog]:             https://en.wikipedia.org/wiki/Verilog 
+[GNU Bison]:           https://www.gnu.org/software/bison/
+[Flex]:                https://github.com/westes/flex 
 

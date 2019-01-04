@@ -167,6 +167,7 @@ we invoke your parser's member functions on those data structures.
 
 ### Struct Port 
 The struct `Port` stores the information of a primary input/output of the module 
+
 | Name | Type | Description |
 | ------------- |:-------------| :--------------|
 | name   | std::vector<std::string> | the names of ports   |

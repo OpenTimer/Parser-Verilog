@@ -15,7 +15,7 @@ module simple (
   out
 );
 
-// Primary inputs
+// primary inputs
 input input1;
 input input2;
 input input3;
@@ -24,12 +24,12 @@ wire input1;
 wire input2;
 wire input3;
 
-// Primary output
+// primary output
 output out; 
 
 wire out;
 
-// Wires
+// wires
 wire w1;
 wire w2;
 wire w3;

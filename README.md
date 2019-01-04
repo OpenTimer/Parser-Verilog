@@ -211,6 +211,10 @@ The struct `Instance` stores the information of a module instance
 # Examples 
 The folder [example](./example) contains several tutorial examples to demonstrate the usage of Parser-Verilog.
 
+| Example | Description | How to Run ? |
+| ------------- |:-------------| :--------------|
+| [sample_parser.cpp](./example/sample_parser.cpp) | Read a Verilog and print the parsed data to screen | ./sample_parser [file]  |
+| [ot_parser.cpp](./example/ot_parser.cpp) | A drop-in replacement Verilog parser for OpenTimer  | ./ot_parser [file]  |
 
 
 # License

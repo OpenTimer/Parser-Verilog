@@ -162,7 +162,7 @@ Below are the required member functions in your custom Verilog parser
 | add_instance | Instance | n/a | Invoked when encountering a gate |
 
 ## Data Structures
-We define a set of `structs` storing the information of components during parsing and 
+We define a set of `structs` storing the information of different components during parsing and 
 we invoke your parser's member functions on those data structures.
 
 

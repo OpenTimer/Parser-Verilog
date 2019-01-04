@@ -10,12 +10,17 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -O2")
 
-find_package(BISON REQUIRED)
-find_package(FLEX REQUIRED)
-
 # add the binary tree to the search path for include files
 include_directories(${PROJECT_SOURCE_DIR})
 include_directories(parser-verilog)
+
+
+# -----------------------------------------------------------------------------
+# Flex & Bison
+# -----------------------------------------------------------------------------
+
+find_package(BISON REQUIRED)
+find_package(FLEX REQUIRED)
 
 BISON_TARGET(verilog_parser
              ${PROJECT_SOURCE_DIR}/parser-verilog/verilog_parser.yy
@@ -24,8 +29,6 @@ FLEX_TARGET(verilog_lexer
             ${PROJECT_SOURCE_DIR}/parser-verilog/verilog_lexer.l
             ${CMAKE_CURRENT_BINARY_DIR}/verilog_lexer.yy.cc)
 ADD_FLEX_BISON_DEPENDENCY(verilog_lexer verilog_parser)
-
-
 
 
 # -----------------------------------------------------------------------------

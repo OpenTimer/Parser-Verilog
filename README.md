@@ -155,15 +155,24 @@ Below are the required member functions in your custom Verilog parser
 
 | Name | Argument | Return | Description |
 | ----- |:------------------| :-------------- | :-------------- |
-| add_module  | std::string | n/a | Invoked when encountering the name of top module |
-| add_port    | Port  | n/a |  Invoked when encountering a primary input/output of the module |
-| add_net     | Net  | n/a | Invoked when encountering a net declaration |
-| add_assignment | Assignment | n/a | Invoked when encountering an assignment statement |
-| add_instance | Instance | n/a | Invoked when encountering a gate |
+| add_module  | std::string | n/a | invoked when encountering the name of top module |
+| add_port    | Port  | n/a |  invoked when encountering a primary input/output of the module |
+| add_net     | Net  | n/a | invoked when encountering a net declaration |
+| add_assignment | Assignment | n/a | invoked when encountering an assignment statement |
+| add_instance | Instance | n/a | invoked when encountering a gate |
 
 ## Data Structures
 We define a set of `structs` storing the information of different components during parsing and 
 we invoke your parser's member functions on those data structures.
+
+### Struct Port 
+The struct `Port` stores the information of a primary input/output of the module 
+| Name | Type | Description |
+| ------------- |:-------------| :--------------|
+| name   | std::vector<std::string> | the names of ports   |
+| PortDirection   | `enum class` | the direction of the port. The value could be either INPUT, OUTPUT or INOUT.   | 
+| beg, end   | `int` | the bitwidth of the port   |
+| ConnectionType | `enum class` | the connection type of the port. The value could be either NONE, WIRE, REG. | 
 
 
 # License

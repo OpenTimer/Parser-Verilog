@@ -207,6 +207,15 @@ The struct `Instance` stores the information of a module instance
 
 
 
+### Struct Constant
+The struct `Constant` records the possible number formats in Verilog
+
+| Name | Type | Description |
+| ------------- |:-------------| :--------------| 
+| value   | std::string |  the value of the number   |
+| ConstantType  | `enum class` | the format of the number. The value could be NONE, INTEGER, BINARY, OCTAL, DECIMAL, HEX, REAL, EXP | 
+
+
 
 # Examples 
 The folder [example](./example) contains several tutorial examples to demonstrate the usage of Parser-Verilog.

@@ -7,7 +7,7 @@ A Fast C++ Header-only Parser for Verilog.
 A [Verilog] is a programming language that is used to describe a 
 digital circuit. Below is a circuit written in Verilog.
 
-<img src="image/circuit.png" height="100" width="40%" align="right"> 
+<img src="image/circuit.png" height="100%" width="40%" align="right"> 
 
 ```Verilog 
 module simple (

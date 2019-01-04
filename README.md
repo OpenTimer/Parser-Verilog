@@ -119,10 +119,38 @@ We recommend using out-of-source build.
 ~$ make 
 ```
 
-## Use Parser-Verilog 
+# Use Parser-Verilog 
 Parser-Verilog is extremely easy to use and understand. You create your own Verilog parser `struct` or `class` that 
-inherits the `VerilogParserInterface` and define member functions to be invoked to process the components in Verilog.
+inherits the `VerilogParserInterface` and define member functions to be invoked to process the components in a circuit.
 
+## Create your own Verilog parser 
+```cpp 
+#include "verilog_driver.hpp"   // The only include you need
+
+// Define your own parser by inheriting the ParserVerilogInterface
+struct MyVerilogParser : public verilog::ParserVerilogInterface {
+
+  virtual ~MyVerilogParser(){}
+
+  // Implement below member functions to process different components
+
+  void add_module(std::string&& name){
+    // Process the module name
+  }
+  void add_port(verilog::Port&& port) {
+    // Process a port
+  }  
+  void add_net(verilog::Net&& net) {
+    // Process a net
+  }
+  void add_assignment(verilog::Assignment&& ast) {
+    // Process an assignment
+  }  
+  void add_instance(verilog::Instance&& inst) {
+    // Process a gate
+  }
+};
+```
 
 
 

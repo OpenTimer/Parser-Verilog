@@ -187,6 +187,17 @@ The struct `Net` stores the information of a net declaration
 
 
 
+### Struct Assignment
+The struct `Assignment` stores the information of an assignment statement
+
+| Name | Type | Description |
+| ------------- |:-------------| :--------------|
+| lhs   | std::vector<std::variant<std::string, NetBit, NetRange>> | the left hand side of the assignment statement |
+| rhs   | std::vector<std::variant<std::string, NetBit, NetRange, Constant>> | the right hand side of the assignment statement  |
+
+
+
+
 # License
 
 <img align="right" src="http://opensource.org/trademarks/opensource/OSI-Approved-License-100x137.png">

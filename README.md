@@ -1,6 +1,6 @@
 # Parser-Verilog 
 
-A Fast C++ Header-only Parser for Verilog.
+A Standalone Structural Verilog Parser
 
 # Get Started with Parser-Verilog 
 

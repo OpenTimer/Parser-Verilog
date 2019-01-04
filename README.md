@@ -55,7 +55,7 @@ The following example demonstrates how to use Parser-Verilog to parse a Verilog 
 // Define your own parser by inheriting the ParserVerilogInterface
 struct MyVerilogParser : public verilog::ParserVerilogInterface {
 
-  virtual ~SampleParser(){}
+  virtual ~MyVerilogParser(){}
 
   // Function that will be called when encountering the top module name.
   void add_module(std::string&& name){

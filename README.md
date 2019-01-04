@@ -120,6 +120,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 
 ***
+[Tsung-Wei Huang]:     http://web.engr.illinois.edu/~thuang19/
+[Chun-Xun Lin]:        https://github.com/clin99
+[Martin Wong]:         https://ece.illinois.edu/directory/profile/mdfwong
 [Verilog]:             https://en.wikipedia.org/wiki/Verilog 
 [GNU Bison]:           https://www.gnu.org/software/bison/
 [Flex]:                https://github.com/westes/flex 

@@ -218,6 +218,7 @@ The struct `Constant` records the possible number formats in Verilog
 
 ### Struct NetBit
 The struct `NetBit` specifies a bit in a net
+
 | Name | Type | Description |
 | ------------- |:-------------| :--------------| 
 | name | std::string |  the name of a net   |
@@ -225,7 +226,8 @@ The struct `NetBit` specifies a bit in a net
 
 
 ### Struct NetRange
-The struct `NetRange` specifies a range in a net
+The struct `NetRange` specifies a range in a net 
+
 | Name | Type | Description |
 | ------------- |:-------------| :--------------| 
 | name | std::string |  the name of a net   |

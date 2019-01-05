@@ -69,10 +69,10 @@
 %type<std::string> valid_name  
 
 %type<std::pair<verilog::PortDirection, verilog::ConnectionType>> port_type 
-%type<verilog::Port> port_declarations port_decl port_decl_clauses
+%type<verilog::Port> port_declarations port_decl port_decl_statements
 
 %type<verilog::NetType> net_type
-%type<verilog::Net> net_decl_clauses net_decl 
+%type<verilog::Net> net_decl_statements net_decl 
 
 %type<verilog::Constant> constant
 %type<verilog::Assignment> assignment 
@@ -109,17 +109,17 @@ module
     { 
       driver->add_module(std::move($2));
     }
-    clauses ENDMODULE  
+    statements ENDMODULE  
   | MODULE valid_name '(' ')' ';'
     {
       driver->add_module(std::move($2));
     }
-    clauses ENDMODULE
+    statements ENDMODULE
   | MODULE valid_name '(' port_names ')' ';' 
     {
       driver->add_module(std::move($2));
     }
-    clauses ENDMODULE
+    statements ENDMODULE
   | MODULE valid_name '(' 
     { 
       driver->add_module(std::move($2)); 
@@ -128,7 +128,7 @@ module
     { 
       driver->add_port(std::move($5)); 
     }
-    ';' clauses ENDMODULE 
+    ';' statements ENDMODULE 
   ;
 
 // port names are ignored as they will be parsed later in declaration
@@ -183,30 +183,30 @@ port_decl
     }
   ;
 
-clauses 
+statements 
   : // empty
-  | clauses clause 
-  | clauses clause_assign
+  | statements statement
+  | statements statement_assign
   ; 
 
-clause
+statement
   : declaration
   | instance
   ;
 
 
 declaration 
-  : port_decl_clauses ';' { driver->add_port(std::move($1)); } 
-  | net_decl_clauses  ';' { driver->add_net(std::move($1)); }
+  : port_decl_statements ';' { driver->add_port(std::move($1)); } 
+  | net_decl_statements  ';' { driver->add_net(std::move($1)); }
   ;
 
-// e.g. "input a, b, output c, d" is not allowed in port declaration clauses 
-port_decl_clauses
+// e.g. "input a, b, output c, d" is not allowed in port declaration statements 
+port_decl_statements
   : port_decl 
     {
       $$ = $1;
     }
-  | port_decl_clauses ',' valid_name 
+  | port_decl_statements ',' valid_name 
     {
       $1.names.emplace_back(std::move($3));    
       $$ = $1;
@@ -225,12 +225,12 @@ net_type
   |  SUPPLY1 { $$ = verilog::NetType::SUPPLY1; }
   ;
 
-net_decl_clauses
+net_decl_statements
   : net_decl 
     {
       $$ = $1;
     }
-  | net_decl_clauses ',' valid_name 
+  | net_decl_statements ',' valid_name 
     {
       $1.names.push_back(std::move($3));
       $$ = $1;
@@ -253,7 +253,7 @@ net_decl
   ;
 
 
-clause_assign
+statement_assign
   : ASSIGN assignments ';'
 
 assignments

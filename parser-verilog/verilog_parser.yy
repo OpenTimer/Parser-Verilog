@@ -69,7 +69,7 @@
 %type<std::string> valid_name  
 
 %type<std::pair<verilog::PortDirection, verilog::ConnectionType>> port_type 
-%type<verilog::Port> port_decls port_decl port_decl_clauses
+%type<verilog::Port> port_declarations port_decl port_decl_clauses
 
 %type<verilog::NetType> net_type
 %type<verilog::Net> net_decl_clauses net_decl 
@@ -124,7 +124,7 @@ module
     { 
       driver->add_module(std::move($2)); 
     } 
-    port_decls ')' 
+    port_declarations ')' 
     { 
       driver->add_port(std::move($5)); 
     }
@@ -149,17 +149,17 @@ port_type
   ;
 
 // e.g. "input a, b, output c, d" is allowed in port declarations
-port_decls
+port_declarations
   : port_decl 
     {
       $$ = $1;
     }
-  | port_decls ',' port_decl  
+  | port_declarations ',' port_decl  
     {
       driver->add_port(std::move($1));
       $$ = $3;
     }
-  | port_decls ',' valid_name 
+  | port_declarations ',' valid_name 
     {
       $1.names.emplace_back(std::move($3));    
       $$ = $1;

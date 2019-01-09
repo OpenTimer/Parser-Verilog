@@ -58,7 +58,7 @@ NAME           [_a-zA-Z][$_a-zA-Z0-9]*{0,1023}
    Check the escape rule inside character class 
    https://www.regular-expressions.info/charclass.html
  */
-ESCAPED_NAME   \\[\\^!"#$%&',()*+\-.a-zA-Z0-9{|}~[\]_:;<=>?@]+[\t\f ]
+ESCAPED_NAME   \\[\\^!"#$%&',()*+\-.a-zA-Z0-9/{|}~[\]_:;<=>?@]+[\t\f ]
 INTEGER        [1-9][0-9]*|0
 BINARY         [+-]?[0-9]*"'"[Bb][01_xXzZ]+
 OCTAL          [+-]?[0-9]*"'"[Oo][0-7_xXzZ]+ 

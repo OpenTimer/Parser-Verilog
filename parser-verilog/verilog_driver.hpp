@@ -6,7 +6,7 @@
 #include <fstream>
 #include <variant>
 #include <unordered_map>
-#include <experimental/filesystem>
+#include <filesystem>
 
 #include "verilog_scanner.hpp"
 #include "verilog_parser.tab.hh"
@@ -26,15 +26,15 @@ class ParserVerilogInterface {
     virtual void add_assignment(Assignment&&) = 0;
     virtual void add_instance(Instance&&) = 0;
 
-    void read(const std::experimental::filesystem::path&); 
+    void read(const std::filesystem::path&); 
 
   private:
     VerilogScanner* _scanner {nullptr};
     VerilogParser*  _parser {nullptr};
 };
 
-inline void ParserVerilogInterface::read(const std::experimental::filesystem::path& p){
-  if(! std::experimental::filesystem::exists(p)){
+inline void ParserVerilogInterface::read(const std::filesystem::path& p){
+  if(! std::filesystem::exists(p)){
     return ;
   }
 

@@ -44,7 +44,6 @@ add_executable(sample_parser
   ${FLEX_verilog_lexer_OUTPUTS}
   ${BISON_verilog_parser_OUTPUTS}
 )
-target_link_libraries(sample_parser stdc++fs)
 
 # A drop-in replacement OpenTimer Verilog parser
 add_executable(ot_parser
@@ -52,7 +51,6 @@ add_executable(ot_parser
   ${FLEX_verilog_lexer_OUTPUTS}
   ${BISON_verilog_parser_OUTPUTS}
 )
-target_link_libraries(ot_parser stdc++fs)
 
 
 
@@ -68,6 +66,5 @@ set(VP_UTEST_DIR ${PROJECT_SOURCE_DIR}/unittest)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${VP_UTEST_DIR})
 
 add_executable(regression unittest/regression.cpp ${FLEX_verilog_lexer_OUTPUTS} ${BISON_verilog_parser_OUTPUTS})
-target_link_libraries(regression stdc++fs)
 add_test(regression ${VP_UTEST_DIR}/regression)
 

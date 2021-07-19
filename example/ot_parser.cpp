@@ -94,7 +94,7 @@ int main(const int argc, const char **argv){
     return EXIT_FAILURE;
   }
   
-  if(std::experimental::filesystem::exists(argv[1])) { 
+  if(std::filesystem::exists(argv[1])) { 
     OpenTimerParser parser;
     parser.read(argv[1]);
   }

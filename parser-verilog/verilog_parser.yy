@@ -3,7 +3,7 @@
 %debug 
 %defines 
 %define api.namespace {verilog}
-%define parser_class_name {VerilogParser}
+%define api.parser.class {VerilogParser}
 
 %define parse.error verbose
 

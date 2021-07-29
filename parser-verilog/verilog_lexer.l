@@ -1,3 +1,8 @@
+/* Avoid redefinition warnings on MSVC */
+%top{
+#include <stdint.h>
+}
+
 %{
 /* C++ string header, for string ops below */
 #include <string>

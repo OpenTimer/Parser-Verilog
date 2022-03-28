@@ -1,0 +1,6 @@
+[requires]
+bison/3.7.6
+flex/2.6.4
+
+[generators]
+cmake

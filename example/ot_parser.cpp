@@ -59,10 +59,12 @@ struct OpenTimerParser : public verilog::ParserVerilogInterface {
 
     std::string pin; 
     std::string net;
-    for(size_t i=0; i<inst.net_names.size(); i++) {
-      auto &net_name = inst.net_names[i][0];
+    if(inst.pin_names.size() != 0)
+      std::cerr << "Unsupported instanciation by position for " << inst.inst_name << std::endl;
+    else
+      for(size_t i=0; i<inst.net_names.size(); i++) {
+        auto &net_name = inst.net_names[i][0];
 
-      if(i < inst.net_names.size()) {
         auto &pin_name = inst.pin_names[i];
         switch(pin_name.index()) {
           case 0: pin = std::get<0>(pin_name); break;
@@ -80,7 +82,6 @@ struct OpenTimerParser : public verilog::ParserVerilogInterface {
         g.cellpin2net.insert({pin, net});
         g.net2cellpin.insert({std::move(net), std::move(pin)});
       }
-    }
   }
 
   Module module;

@@ -10,6 +10,9 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -O2")
 
+# Help LSP-based IDEs (VSCode, Neovim, etc.)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 # add the binary tree to the search path for include files
 include_directories(${PROJECT_SOURCE_DIR})
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
